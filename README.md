@@ -2,6 +2,6 @@
 
 Flight-simulator - developing during our "Advanced software development" course
 
-# Languages
+$ Languages
 * Java and javafx
 * xsml
