@@ -46,7 +46,7 @@ public class ZscoreAnomalyDetector implements TimeSeriesAnomalyDetector {
         for (int i=0;i<hashSize-1;i++) { 
 		  float[] curColToCheck = ts.getHashMap().get(features[i]);	
           if(tx.valueAtIndex(features[i])<checkZScore(curColToCheck)){
-              anomalyReportList.add(new AnomalyReport("division in col"+features[i],(long)i));
+              anomalyReportList.add(new AnomalyReport("division in col"+features[i],(long)i+1));
           } 
       }
       	if (anomalyReportList.isEmpty())
