@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.10" class="java.beans.XMLDecoder">
+ <object class="sample.UserSettings">
+  <void property="aileron">
+   <string>/controls/flight/aileron[0]</string>
+  </void>
+  <void property="airSpeed">
+   <string>/instrumentation/airspeed-indicator/indicated-speed-kt</string>
+  </void>
+  <void property="altitude">
+   <string>/position/altitude-ft</string>
+  </void>
+  <void property="elevator">
+   <string>/controls/flight/elevator</string>
+  </void>
+  <void property="heading">
+   <string>/orientation/heading-deg</string>
+  </void>
+  <void property="ip">
+   <string>DESKTOP-VM6GTMI/10.160.4.119</string>
+  </void>
+  <void property="port">
+   <string>5402</string>
+  </void>
+  <void property="rudder">
+   <string>/controls/flight/elevator</string>
+  </void>
+  <void property="throttle">
+   <string>/controls/engines/engine[0]/throttle</string>
+  </void>
+ </object>
+</java>
