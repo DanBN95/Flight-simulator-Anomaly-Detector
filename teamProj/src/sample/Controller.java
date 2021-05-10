@@ -24,7 +24,7 @@ public class Controller implements Initializable {
     private NumberAxis y;
 
     @FXML
-    private LineChart<> LineChart;
+    private LineChart<?,?> LineChart;
 
 
     @Override
