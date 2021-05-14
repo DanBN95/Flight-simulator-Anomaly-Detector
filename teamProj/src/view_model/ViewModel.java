@@ -5,6 +5,10 @@ import javafx.beans.property.SimpleFloatProperty;
 import model.Model;
 import test.TimeSeries;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -18,6 +22,7 @@ public class ViewModel implements Observer {
 
     // To Do: build a timeseries with a csv we get from the user,
     TimeSeries timeSeries;
+    test.TimeSeriesAnomalyDetector anomalyDtector;
 
     public ViewModel(Model m) {
         this.model = m;
@@ -46,7 +51,28 @@ public class ViewModel implements Observer {
 
     }
 
+    public void LoadAlgo() {
+        //need to deal with exceptions
+        String input,className;
+        System.out.println("enter a class directory");
+        try {
+            BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+            input=in.readLine(); // get user input
+            System.out.println("enter the class name");
+            className=in.readLine();
+            in.close();
+// load class directory
+            URLClassLoader urlClassLoader = URLClassLoader.newInstance(new URL[] {
+                    new URL("file://"+input)
+            });
+            Class<?> c = urlClassLoader.loadClass(className);
+            test.TimeSeriesAnomalyDetector Ts = (test.TimeSeriesAnomalyDetector) c.newInstance();
+            this.anomalyDtector= Ts;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
+    }
     @Override
     public void update(Observable o, Object arg) {
 

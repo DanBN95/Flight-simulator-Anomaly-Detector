@@ -3,6 +3,7 @@ package model;
 import javafx.beans.InvalidationListener;
 import sample.UserSettings;
 import test.AnomalyDetectionHandler;
+import test.TimeSeriesAnomalyDetector;
 import test.TimeSeries;
 
 import javax.sound.sampled.spi.AudioFileReader;
@@ -21,6 +22,7 @@ public class Model extends Observable {
 
     TimeSeries timeSeries;
     AnomalyDetectionHandler detectionHandler;
+    TimeSeriesAnomalyDetector anomalyDetector;
     PrintWriter out2fg;
     UserSettings userSettings;
     Socket fg;
@@ -167,4 +169,10 @@ public class Model extends Observable {
         }
     }
 
+
+    public void setAnomalyDetevtor(TimeSeriesAnomalyDetector ad ){
+        this.anomalyDetector=ad;
+    }
+
+    //add start to anomlydetector to start search detector
 }
